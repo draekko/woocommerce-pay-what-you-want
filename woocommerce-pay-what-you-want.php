@@ -1370,8 +1370,10 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 
             $money_prefix  = trim(get_option(self::ID . '_money_prefix'));
             $money_suffix  = trim(get_option(self::ID . '_money_suffix'));
-            if (!empty(trim($money_prefix))) $money_prefix = $money_prefix . " ";
-            if (!empty(trim($money_suffix))) $money_suffix = " " . $money_suffix;
+            $t_m_p = trim( $money_prefix );
+            $t_m_s = trim( $money_suffix );
+            if ( !empty( $t_m_p ) ) $money_prefix = $money_prefix . " ";
+            if ( !empty( $t_m_s ) ) $money_suffix = " " . $money_suffix;
 
             /* PRICE VALUES */
             $min_price = get_post_meta( $post->ID, self::ID . '_amount_min_price', true );
